@@ -117,3 +117,4 @@ if ! shopt -oq posix; then
 fi
 
 export EDITOR=nvim
+set -o vi
