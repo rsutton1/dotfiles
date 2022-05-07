@@ -1,6 +1,7 @@
 alias gs="git status"
 alias gd="git diff"
-alias gd="git diff --staged"
+alias gds="git diff --staged"
 alias ga="git add"
 alias gau="git add -u"
 alias gc="git commit"
+alias gcm="git commit -m"
