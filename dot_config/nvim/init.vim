@@ -51,7 +51,13 @@ endif
 
 call plug#begin(data_dir . '/plugins')
 
+source ~/.config/nvim/plugins/plenary.vim
 source ~/.config/nvim/plugins/dracula.vim
+source ~/.config/nvim/plugins/nerdtree.vim
 source ~/.config/nvim/plugins/airline.vim
+source ~/.config/nvim/plugins/fzf.vim
+source ~/.config/nvim/plugins/surround.vim
+source ~/.config/nvim/plugins/dispatch.vim
+source ~/.config/nvim/plugins/fugitive.vim
 call plug#end()
 doautocmd User PlugLoaded
