@@ -42,6 +42,9 @@ map gf :edit <cfile><cr>
 vnoremap < <gv
 vnoremap > >gv
 
+# automatically set textwidth in markdown files
+au BufRead,BufNewFile *.md setlocal textwidth=80
+
 " Automatically install vim-plug
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
