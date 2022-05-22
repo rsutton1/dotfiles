@@ -38,11 +38,11 @@ nmap <leader>Q :bufdo bdelete<cr>
 " Allow gf to open non-existent files
 map gf :edit <cfile><cr>
 
-" " Reselect visual selection after indenting
+" Reselect visual selection after indenting
 vnoremap < <gv
 vnoremap > >gv
 
-# automatically set textwidth in markdown files
+" automatically set textwidth in markdown files
 au BufRead,BufNewFile *.md setlocal textwidth=80
 
 " Automatically install vim-plug
