@@ -35,6 +35,9 @@ nmap <leader>vr :source ~/.config/nvim/init.vim<cr>
 nmap <leader>k :nohlsearch<CR>
 nmap <leader>Q :bufdo bdelete<cr>
 
+" edit chezmoi
+nmap <leader>ce :edit ~/.local/share/chezmoi/README.md<cr>
+
 " Allow gf to open non-existent files
 map gf :edit <cfile><cr>
 
