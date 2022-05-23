@@ -65,5 +65,7 @@ source ~/.config/nvim/plugins/rainbow.vim
 source ~/.config/nvim/plugins/autopairs.vim
 source ~/.config/nvim/plugins/ale.vim
 source ~/.config/nvim/plugins/nerdtree.vim
+source ~/.config/nvim/plugins/nvim-comment.vim
+source ~/.config/nvim/plugins/vim-salt.vim
 call plug#end()
 doautocmd User PlugLoaded
