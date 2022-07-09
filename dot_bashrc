@@ -121,3 +121,5 @@ set -o vi
 export PATH=$PATH:/usr/local/go/bin
 export FZF_DEFAULT_COMMAND='find -L'
 export PATH="/opt/neovim/bin:$PATH"
+export PATH=$PATH:~/.pyenv/bin
+source ~/.bashrc-pyenv
