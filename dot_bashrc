@@ -120,6 +120,10 @@ export EDITOR=nvim
 set -o vi
 export PATH=$PATH:/usr/local/go/bin
 export FZF_DEFAULT_COMMAND='find -L'
-export PATH="/opt/neovim/bin:$PATH"
+export PATH="/usr/local/nvim/bin/:$PATH"
 export PATH=$PATH:~/.pyenv/bin
 source ~/.bashrc-pyenv
+# start salt managed rbenv.sls
+export PATH=~/.rbenv/bin:~/.rbenv/shims:$PATH
+eval "$(rbenv init - bash)"
+# end salt managed rbenv.sls
