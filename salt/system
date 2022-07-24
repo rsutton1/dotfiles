@@ -1,0 +1,15 @@
+file_client: local
+fileserver_backend:
+  - roots
+  - gitfs
+
+gitfs_remotes:
+  - https://github.com/saltstack-formulas/docker-formula
+  - https://github.com/saltstack-formulas/node-formula
+
+file_roots:
+  base:
+    - /srv/salt/files
+pillar_roots:
+  base:
+    - /srv/salt/pillar
