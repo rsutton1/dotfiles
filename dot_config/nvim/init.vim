@@ -30,6 +30,7 @@ set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 " key bindings
 inoremap jj <ESC>
 
+nmap <leader>y :!w win32yank.exe -i
 nmap <leader>ve :edit ~/.config/nvim/init.vim<cr>
 nmap <leader>vr :source ~/.config/nvim/init.vim<cr>
 nmap <leader>k :nohlsearch<CR>
