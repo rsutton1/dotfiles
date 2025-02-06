@@ -34,8 +34,11 @@ inoremap jj <ESC>
 nmap <leader>y :!w win32yank.exe -i
 nmap <leader>ve :edit ~/.config/nvim/init.vim<cr>
 nmap <leader>vr :source ~/.config/nvim/init.vim<cr>
+nmap <leader>vte :edit ~/.tmux.conf<cr>
+nmap <leader>vtr :!tmux source ~/.tmux.conf<cr>
 nmap <leader>k :nohlsearch<CR>
-nmap <leader>q :bufdo bdelete<cr>
+nmap <leader>Q :bufdo bdelete<cr>
+nmap <leader>q :q<cr>
 
 " edit chezmoi
 nmap <leader>ce :edit ~/.local/share/chezmoi/README.md<cr>
@@ -76,6 +79,7 @@ source ~/.config/nvim/plugins/vim-salt.vim
 source ~/.config/nvim/plugins/lsp.vim
 source ~/.config/nvim/plugins/lightspeed.nvim
 source ~/.config/nvim/plugins/godot.vim
+source ~/.config/nvim/plugins/nvim-tmux-navigation.nvim
 call plug#end()
 doautocmd User PlugLoaded
 lua <<EOF
@@ -129,5 +133,8 @@ require'lspconfig'.gdscript.setup{
     cmd = { "godot-wsl-lsp", "--host", "172.20.144.1"},
     root_dir = require'lspconfig'.util.root_pattern("project.godot"),
     on_attach = on_attach,
+}
+require'nvim-tmux-navigation'.setup {
+    disable_when_zoomed = true -- defaults to false
 }
 EOF
