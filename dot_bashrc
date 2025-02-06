@@ -127,3 +127,14 @@ source ~/.bashrc-pyenv
 export PATH=~/.rbenv/bin:~/.rbenv/shims:$PATH
 eval "$(rbenv init - bash)"
 # end salt managed rbenv.sls
+## salt managed -- nvim start
+export PATH="/opt/nvim/current/bin:$PATH"
+## salt managed -- nvim end
+
+# allows copy to clipboard from WSL to windows
+export PATH=$PATH:"/mnt/c/Program\ Files/win32yank/bin"
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

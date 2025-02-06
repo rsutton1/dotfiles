@@ -1,3 +1,4 @@
+autocmd BufRead,BufNewFile *.gd setlocal noexpandtab
 set list
 set nocompatible            " disable compatibility to old-time vi
 set showmatch               " show matching
@@ -34,7 +35,7 @@ nmap <leader>y :!w win32yank.exe -i
 nmap <leader>ve :edit ~/.config/nvim/init.vim<cr>
 nmap <leader>vr :source ~/.config/nvim/init.vim<cr>
 nmap <leader>k :nohlsearch<CR>
-nmap <leader>Q :bufdo bdelete<cr>
+nmap <leader>q :bufdo bdelete<cr>
 
 " edit chezmoi
 nmap <leader>ce :edit ~/.local/share/chezmoi/README.md<cr>
@@ -58,6 +59,7 @@ endif
 
 call plug#begin(data_dir . '/plugins')
 
+source ~/.config/nvim/plugins/mason.vim
 source ~/.config/nvim/plugins/plenary.vim
 source ~/.config/nvim/plugins/dracula.vim
 source ~/.config/nvim/plugins/airline.vim
@@ -73,6 +75,7 @@ source ~/.config/nvim/plugins/nvim-comment.vim
 source ~/.config/nvim/plugins/vim-salt.vim
 source ~/.config/nvim/plugins/lsp.vim
 source ~/.config/nvim/plugins/lightspeed.nvim
+source ~/.config/nvim/plugins/godot.vim
 call plug#end()
 doautocmd User PlugLoaded
 lua <<EOF
@@ -111,8 +114,20 @@ local on_attach = function(client, bufnr)
   vim.lsp.set_log_level("debug")
 end
 
+require'lspconfig'.pyright.setup{}
+require'mason'.setup{}
+require'mason-lspconfig'.setup{}
 local lsp_flags = {
   -- This is the default in Nvim 0.7+
   debounce_text_changes = 150,
+}
+require'lspconfig'.salt_ls.setup{
+    on_attach = on_attach,
+    flags = lsp_flags
+}
+require'lspconfig'.gdscript.setup{
+    cmd = { "godot-wsl-lsp", "--host", "172.20.144.1"},
+    root_dir = require'lspconfig'.util.root_pattern("project.godot"),
+    on_attach = on_attach,
 }
 EOF
