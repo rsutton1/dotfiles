@@ -118,7 +118,10 @@ fi
 
 export EDITOR=nvim
 set -o vi
-export PATH=$PATH:/usr/local/go/bin
+# export PATH=$PATH:/usr/local/go/bin:~/go/bin
+export GOROOT=~/sdk/go1.23.2
+export PATH=$PATH:$GOROOT/bin
+# alias go='go1.23.2'
 export FZF_DEFAULT_COMMAND='find -L'
 export PATH="/usr/local/nvim/bin/:$PATH"
 export PATH=$PATH:~/.pyenv/bin
@@ -141,4 +144,4 @@ export NVM_DIR="$HOME/.nvm"
 
 # oh-my-posh
 # theme: https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/catppuccin_mocha.omp.json
-eval "$(oh-my-posh init bash --config ~/.oh-my-posh_theme_catppuccinmocha.omp.json)"
+# eval "$(oh-my-posh init bash --config ~/.oh-my-posh_theme_catppuccinmocha.omp.json)"

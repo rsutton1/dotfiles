@@ -80,6 +80,7 @@ source ~/.config/nvim/plugins/lsp.vim
 source ~/.config/nvim/plugins/lightspeed.nvim
 source ~/.config/nvim/plugins/godot.vim
 source ~/.config/nvim/plugins/nvim-tmux-navigation.nvim
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 doautocmd User PlugLoaded
 lua <<EOF
